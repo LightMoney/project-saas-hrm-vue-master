@@ -7,6 +7,7 @@
  */
 
 import Layout from '@/module-dashboard/pages/layout'
+
 const _import = require('@/router/import_' + process.env.NODE_ENV)
 
 export default [
@@ -26,6 +27,12 @@ export default [
         component: _import('saas-clients/pages/index'),
         name: 'saas-clients-index',
         meta: {title: 'saas企业管理', icon: 'component', noCache: true}
+      },
+      {
+        path: 'details',
+        component: _import('saas-clients/pages/detail'), // 跳转  vue  路由
+        name: 'saas-clients-detail',
+        meta: {title: '企业详情', icon: 'component', noCache: true}
       }
     ]
   }

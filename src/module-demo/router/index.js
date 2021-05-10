@@ -24,7 +24,7 @@ export default [
       {
         path: 'index',
         component: _import('demo/pages/index'),
-        name: 'saas-clients-index',
+        name: 'demo-index',
         meta: {title: 'demo', icon: 'component', noCache: true}
       }
     ]
