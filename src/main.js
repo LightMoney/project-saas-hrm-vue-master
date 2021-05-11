@@ -19,14 +19,17 @@ import './mock' // simulation data
 import dashboard from '@/module-dashboard/' // 面板
 import demo from '@/module-demo/' // 面板
 import saasClients from '@/module-saas-clients/' // 企业管理面板
+import dept from '@/module-departments'// 部门管理面板
 
 import tools from './utils/common.js'
+
 Vue.prototype.$tools = tools
 
 Vue.use(tools)
 Vue.use(dashboard, store)
 Vue.use(demo, store)
 Vue.use(saasClients, store)
+Vue.use(dept, store)
 
 /*
 * 注册 - 组件
@@ -51,5 +54,5 @@ new Vue({
   store,
   i18n,
   template: '<App/>',
-  components: { App }
+  components: {App}
 })

@@ -9,6 +9,7 @@ export default {
     let s = date.getSeconds()
     return Y + M + D + h + m + s
   },
+  // 该方法将数组转化为数据结构
   transformTozTreeFormat: function (sNodes) {
     var i, l;
     var r = [];
@@ -17,8 +18,8 @@ export default {
       tmpMap[sNodes[i].id] = sNodes[i];
     }
     for (i = 0, l = sNodes.length; i < l; i++) {
-      var p = tmpMap[sNodes[i].pid];
-      if (p && sNodes[i].id != sNodes[i].pid) {
+      var p = tmpMap[sNodes[i].parentId];
+      if (p && sNodes[i].id != sNodes[i].parentId) {
         var children = this.nodeChildren(p);
         if (!children) {
           children = this.nodeChildren(p, []);
