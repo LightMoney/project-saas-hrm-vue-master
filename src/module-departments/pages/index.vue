@@ -161,7 +161,6 @@
       },
       saveDept() {
         this.deptOne.parentId = this.parentId
-        this.deptOne.companyId = '1' // 暂时写死
         addOrUpdate(this.deptOne).then(result => {
           this.$message({
             message: result.data.message,
@@ -197,8 +196,8 @@
           })
         })
       },
-      getList(companyId) {
-        list({companyId: companyId}).then(result => {
+      getList() {
+        list().then(result => {
           this.departData = result.data.data
           // 将普通的数组转化为父子结构
           this.depts = commonApi.transformTozTreeFormat(result.data.data.depts)
@@ -207,8 +206,8 @@
       }
     },
     created: function () {
-      var companyId = '1' // 暂时写死
-      this.getList(companyId)
+      // var companyId = '1' // 暂时写死
+      this.getList()
     }
   }
 </script>

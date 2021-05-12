@@ -20,6 +20,8 @@ import dashboard from '@/module-dashboard/' // 面板
 import demo from '@/module-demo/' // 面板
 import saasClients from '@/module-saas-clients/' // 企业管理面板
 import dept from '@/module-departments'// 部门管理面板
+import employees from '@/module-employees'// 用户员工管理面板
+import settings from '@/module-settings'// 角色管理面板
 
 import tools from './utils/common.js'
 
@@ -30,6 +32,8 @@ Vue.use(dashboard, store)
 Vue.use(demo, store)
 Vue.use(saasClients, store)
 Vue.use(dept, store)
+Vue.use(employees, store)
+Vue.use(settings, store)
 
 /*
 * 注册 - 组件
