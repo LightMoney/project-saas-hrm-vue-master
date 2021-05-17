@@ -146,7 +146,7 @@
       },
       saveOrUpdate() {
         this.formData.type = this.type
-        this.formData.pid = this.pid
+        this.formData.parentId = this.pid
         // 不知道为传过来的就是字符  这里转换下避免后端报错
         this.formData.enVisible = this.formData.enVisible - 0
         saveOrUpdate(this.formData).then(res => {
