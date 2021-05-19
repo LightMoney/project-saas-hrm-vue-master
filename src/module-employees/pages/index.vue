@@ -59,6 +59,8 @@
                 查看
               </router-link>
               <el-button @click="handleRole(scope.row)" type="text" size="small">分配角色</el-button>
+              <!--              <el-button v-if="show('point-user-delete')" @click="handleDelete(scope.row)" type="text" size="small">删除-->
+              <!--              </el-button>-->
               <el-button v-if="show('point-user-delete')" @click="handleDelete(scope.row)" type="text" size="small">删除
               </el-button>
             </template>
@@ -142,9 +144,12 @@
           }
         ).then(() => {
           remove({id: item.id})
-            .then(response => {
-              this.$message.success('删除成功' + '!')
-              this.doQuery();
+            .then(res => {
+              console.log()
+              this.$message({message: res.data.message, type: res.data.success ? 'success' : 'error'})
+              if (res.data.success) {
+                this.doQuery();
+              }
             })
         })
       },
@@ -155,7 +160,7 @@
     // 创建完毕状态
     created: function () {
       this.doQuery()
-    },
+    }
   }
 </script>
 
