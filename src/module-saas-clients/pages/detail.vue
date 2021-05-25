@@ -19,12 +19,12 @@
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="onSubmit">审核</el-button>
-                <el-button>取消</el-button>
+                <el-button>拒绝</el-button>
               </el-form-item>
             </el-form>
           </el-tab-pane>
-          <el-tab-pane label="账户信息" name="second">配置管理</el-tab-pane>
-          <el-tab-pane label="交易记录" name="third">角色管理</el-tab-pane>
+          <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+          <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
         </el-tabs>
       </el-card>
     </div>

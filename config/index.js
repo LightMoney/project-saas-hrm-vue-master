@@ -25,6 +25,13 @@ module.exports = {
           '^/api/dept': ''
         }
       },
+       '/api/employees': {
+          target: 'http://localhost:9003/employees/',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api/employees': ''
+          }
+        } ,
       //企业系统请求远程服务
       '/api/sys': {
         target: 'http://localhost:9002/sys/',

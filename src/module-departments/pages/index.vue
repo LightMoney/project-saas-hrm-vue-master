@@ -207,6 +207,7 @@
     },
     created: function () {
       // var companyId = '1' // 暂时写死
+      console.log('test....')
       this.getList()
     }
   }

@@ -17,7 +17,7 @@ NProgress.configure({showSpinner: false}) // NProgress Configuration
 
 /**
  * 基础路由
- * 
+ *
 * root: true                     在一级栏目显示
 * hidden: true                   if `hidden:true` will not show in the sidebar(default is false)
 * alwaysShow: true               if set true, will always show the root menu, whatever its child routes length
