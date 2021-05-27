@@ -287,24 +287,27 @@
           month: this.baseData.month
         }
         importDown(data).then((res) => {
-          const link = document.createElement('a');
-          const blob = new Blob([res.data], {
-            type: 'application/octet-stream'
-          });
-          link.style.display = 'none';
-          link.href = URL.createObjectURL(blob);
-          link.setAttribute('download', '出单情况统计' + '.xlsx');
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          this.ConfirmLoading = false;
-        })
-          .catch((error) => {
-            this.ConfirmLoading = false;
-            this.$alert('处理失败,请稍后重试', '提示');
-            console.error(error);
-          });
+          if (res.status === 200 && res.data) {
+            var disposition = res.headers['content-disposition'];
+            var fileName = decodeURI(disposition.split("filename=")[1].split(";filename*=")[0])
+            // let blob = new Blob([res.data], {type: 'application/octet-stream'});
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(new Blob([res.data], {type: 'application/octet-stream'}))
+            link.style.display = 'none'
+            link.download = fileName;
+            // link.click();
+            // link.remove();
+            document.body.appendChild(link)
+            link.click()
+            // document.body.removeChild(link)
 
+          }
+
+        }).catch((error) => {
+          this.ConfirmLoading = false;
+          this.$alert('处理失败,请稍后重试', '提示');
+          console.error(error);
+        })
 
       },
       // 归档报表
