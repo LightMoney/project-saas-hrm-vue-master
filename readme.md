@@ -1,3 +1,7 @@
+
+
+注意导出一直失败文件打不开是因为main.js中引入了import './mock'  导致数据不是blob类型
+
 # SAAS IRHM 系统
 
 ## 运行

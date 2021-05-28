@@ -21,11 +21,11 @@
         </el-input>
       </div>
       <a class="el-button fr el-button--primary el-button--mini" title="导出" @click='handleExport(1)'>导出</a>
-      <!--
-     <a class="el-button fr el-button--primary el-button--mini" title="导出" :href="exportUrl">导出</a>
 
-     <a class="el-button fr el-button--primary el-button--mini" title="导出" @click='handleExport(1)'>导出</a>
-     -->
+<!--     <a class="el-button fr el-button&#45;&#45;primary el-button&#45;&#45;mini" title="导出" :href="exportUrl">导出</a>-->
+      <!--
+          <a class="el-button fr el-button--primary el-button--mini" title="导出" @click='handleExport(1)'>导出</a>
+          -->
     </div>
     <el-table :key='tableKey' :data="tables" v-loading="listLoading" element-loading-text="给我一点时间" fit
               highlight-current-row style="width: 100%; margin-top:10px;" border>
@@ -288,6 +288,7 @@
         }
         importDown(data).then((res) => {
           if (res.status === 200 && res.data) {
+            console.log(res)
             var disposition = res.headers['content-disposition'];
             var fileName = decodeURI(disposition.split("filename=")[1].split(";filename*=")[0])
             // let blob = new Blob([res.data], {type: 'application/octet-stream'});

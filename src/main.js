@@ -12,7 +12,7 @@ import './errorLog'// error log
 import * as filters from './filters' // global filters
 // font-awesome
 import 'font-awesome/css/font-awesome.css'
-import './mock' // simulation data
+// import './mock' // simulation data
 /*
 * 注册 - 业务模块
 */
